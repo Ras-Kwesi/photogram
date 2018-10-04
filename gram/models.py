@@ -14,5 +14,11 @@ class Image(models.Model):
     image = models.CharField(max_length=40)
     caption = models.CharField(max_length=100)
     path = models.ImageField(upload_to='picture/', default=True)
-    profilekey = models.ForeignKey(Profile)
+    poster = models.ForeignKey(Profile)
     likes = models.IntegerField()
+
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=100)
+    imagekey = models.ForeignKey(Image)
+    commentator = models.ForeignKey(Profile)
