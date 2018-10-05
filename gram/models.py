@@ -10,6 +10,7 @@ class Profile(models.Model):
     profilepic = models.ImageField(upload_to='articles/',blank=True)
     email = models.EmailField()
     contact = models.CharField(max_length=15,blank=True)
+    following
 
     def __str__(self):
         return self.username

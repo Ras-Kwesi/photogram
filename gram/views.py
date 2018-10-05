@@ -23,9 +23,9 @@ def new_post(request):
 
 
 # @login_required(login_url='/accounts/login/')
-def index(request,article_id):
+def index(request):
     try:
-        posts = Image.objects.get(id = article_id)
+        posts = Image.objects.all()
     except DoesNotExist:
         raise Http404()
     return render(request,"index.html", {"posts":posts})
