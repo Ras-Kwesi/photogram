@@ -20,6 +20,17 @@ class Profile(models.Model):
     def save_profile(self):
         self.save()
 
+    @classmethod
+    def search_by_username(cls,search_query):
+        profiles = cls.objects.filter(username__icontains=search_query)
+        return profiles
+
+    @classmethod
+    def updateimage(cls, id):
+        image = cls.objects.get(id=id)
+        return image
+
+
 
 
 class Comment(models.Model):
@@ -43,6 +54,7 @@ class Image(models.Model):
     poster = models.ForeignKey(Profile)
     likes = models.IntegerField()
     imagecomments = models.ForeignKey(Comment)
+
     def save_image(self):
         self.save()
 
@@ -63,3 +75,6 @@ class Image(models.Model):
     def image_comments(cls,id):
         comments = cls.objects.filter(imagecomments__comment_id=id)
         posters = cls.objects.filter(imagecomments__commnetator__id=id)
+        return comments,posters
+
+
