@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     name = models.CharField(max_length=25)
     username = models.CharField(max_length=25,unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
     bio = models.CharField(max_length=100)
     profilepic = models.ImageField(upload_to='articles/',blank=True)
@@ -56,7 +57,7 @@ class Image(models.Model):
     image = models.CharField(max_length=40)
     caption = models.CharField(max_length=100)
     path = models.ImageField(upload_to='picture/', default=True)
-    account = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField()
     imagecomments = models.ForeignKey(Comment)
 

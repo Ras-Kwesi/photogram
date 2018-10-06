@@ -36,11 +36,22 @@ def explore_results(request):
 
     if 'profile' in request.GET and request.GET["profile"]:
         search_query = request.GET.get("profile")
-        searched_articles = Profile.search_by_username(search_query)
+        searched_profiles = Profile.search_by_username(search_query)
         message = f"{search_term}"
 
-        return render(request, 'explore.html',{"message":message,"articles": searched_articles})
+        return render(request, 'explore.html',{"message":message,"articles": searched_profiles})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'explore.html',{"message":message})
+
+
+
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    profile = Profile.objects.get(profile=current_user)
+
+    return(request,'profile.html',{'current_user':profile})
+
+
