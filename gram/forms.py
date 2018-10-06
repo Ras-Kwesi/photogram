@@ -10,3 +10,4 @@ class NewImageForm(forms.ModelForm):
         }
 
 
+

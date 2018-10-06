@@ -6,9 +6,9 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=25)
-    username = models.CharField(max_length=25,unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    # name = models.CharField(max_length=25)
+    # username = models.CharField(max_length=25,unique=True)
     # relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
     bio = models.TextField(max_length=100, blank=True)
     profilepic = models.ImageField(upload_to='articles/',blank=True)
@@ -16,19 +16,21 @@ class Profile(models.Model):
     contact = models.CharField(max_length=15,blank=True)
 
 
-    def __str__(self):
-        return self.username
 
-    class Meta:
-        ordering = ['username']
     @receiver(post_save,sender=User)
     def create_user_profile(sender,instance,created,**kwargs):
         if created:
             Profile.objects.create(user=instance)
 
     @receiver(post_save,sender=User)
-    def save_user_profile(seder,instance,**kwargs):
+    def save_user_profile(sender,instance,**kwargs):
         instance.profile.save()
+
+    def __str__(self):
+        return self.user.username
+
+    # class Meta:
+    #     ordering = ['username']
 
     @classmethod
     def search_by_username(cls,search_query):
