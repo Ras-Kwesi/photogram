@@ -1,14 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 # from annoying.fields import AutoOneToOneField
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=25)
     username = models.CharField(max_length=25,unique=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
-    bio = models.CharField(max_length=100)
+    # relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
+    bio = models.TextField(max_length=100, blank=True)
     profilepic = models.ImageField(upload_to='articles/',blank=True)
     email = models.EmailField()
     contact = models.CharField(max_length=15,blank=True)
@@ -19,9 +21,14 @@ class Profile(models.Model):
 
     class Meta:
         ordering = ['username']
+    @receiver(post_save,sender=User)
+    def create_user_profile(sender,instance,created,**kwargs):
+        if created:
+            Profile.objects.create(user=instance)
 
-    def save_profile(self):
-        self.save()
+    @receiver(post_save,sender=User)
+    def save_user_profile(seder,instance,**kwargs):
+        instance.profile.save()
 
     @classmethod
     def search_by_username(cls,search_query):
@@ -33,9 +40,9 @@ class Profile(models.Model):
         image = cls.objects.get(id=id)
         return image
 
-class Relationship(models.Model):
-    follow = models.ForeignKey(Profile, related_name="follow")
-    follower = models.ForeignKey(Profile, related_name="follower")
+# class Relationship(models.Model):
+#     follow = models.ForeignKey(Profile, related_name="follow")
+#     follower = models.ForeignKey(Profile, related_name="follower")
 
 
 
