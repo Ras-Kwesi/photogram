@@ -3,7 +3,7 @@ from django.http  import HttpResponse,Http404
 from .models import *
 from .forms import NewImageForm
 from django.contrib.auth.decorators import login_required
-
+from .forms import *
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -55,3 +55,18 @@ def profile(request):
 
 
     return render(request,'profile.html',{'profile':profile})
+
+@login_required(login_url='/accounts/login/')
+def update_profile(request):
+    current_user=request.user
+    if request.method == 'POST':
+        form = EditProfile(request.POST, request.FILES)
+        if form.is_valid():
+            new_profile = form.save(commit=False)
+            new_profile.profile = current_user
+            new_profile.save()
+        return redirect('profile')
+
+    else:
+        form = EditProfile()
+    return render(request, 'update_profile.html', {"form": form})

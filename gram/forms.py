@@ -10,11 +10,6 @@ class NewImageForm(forms.ModelForm):
 class EditProfile(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user']
-
-
-class EditProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        exclude = ['email']
+        exclude = []
         # fields = [ 'profilepic','bio', 'email', 'contact']
+
