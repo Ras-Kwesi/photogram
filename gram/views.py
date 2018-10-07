@@ -50,6 +50,8 @@ def explore_results(request):
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
-    profile = Profile.objects.get(user=current_user)
+    # profile = Profile.objects.get(user=current_user)
+    profile = Profile.objects.filter(user=request.user.id)
 
-    return(request,'profile.html',{'user':profile})
+
+    return render(request,'profile.html',{'profile':profile})
