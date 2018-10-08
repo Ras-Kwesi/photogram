@@ -14,7 +14,7 @@ def new_post(request):
         form = NewImageForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
-            image.editor = current_user
+            image.profile = current_user
             image.save()
         return redirect('index')
 
