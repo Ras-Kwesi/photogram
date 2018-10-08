@@ -8,7 +8,8 @@ urlpatterns = [
     url('^explore/',views.explore_results,name='explore'),
     url('^profile/$',views.profile,name='profile'),
     url('^update_profile/',views.update_profile,name='update_profile'),
-    url('^new_post/',views.new_post,name='new_post')
+    url('^new_post/',views.new_post,name='new_post'),
+    url('^comment/(\d+)',views.comment,name='comment'),
 
 ]
 if settings.DEBUG:

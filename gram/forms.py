@@ -23,4 +23,4 @@ class EditUser(forms.ModelForm):
 class NewComment(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ['commentator']
+        exclude = ['commentator','comment_image']

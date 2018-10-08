@@ -48,15 +48,7 @@ class Profile(models.Model):
 
 
 
-class Comment(models.Model):
-    comment = models.CharField(max_length=100)
-    commentator = models.ForeignKey(Profile)
 
-    def save_comment(self):
-        self.save()
-
-    def delete_comment(self):
-        self.delete()
 
 
 
@@ -68,7 +60,7 @@ class Image(models.Model):
     path = models.ImageField(upload_to='picture/', default=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
-    imagecomments = models.ForeignKey(Comment,null=True)
+    # imagecomments = models.ForeignKey(Comment,null=True)
 
 
 
@@ -94,4 +86,13 @@ class Image(models.Model):
         posters = cls.objects.filter(imagecomments__commnetator__id=id)
         return comments,posters
 
+class Comment(models.Model):
+    comment = models.CharField(max_length=100)
+    commentator = models.ForeignKey(User)
+    comment_image = models.ForeignKey(Image,related_name='comment',null=True)
 
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()

@@ -1,20 +1,18 @@
-
+ {% load bootstrap4 %}
 
 <div class="col-md-4 offset-md-3">
-    {% for post in posts %}
+    {% for image in images %}
 
     <div class="row">
         <div class="card">
-            <div class="card-header">{{post.profile.username}}</div>
-            <img class="card-img-top" src="{{post.path.url}}">
+            <div class="card-header">{{image.profile.username}}</div>
+            <img class="card-img-top" src="{{image.path.url}}">
             <div class="card-body">
                 <h1 class="cart-text"># likes</h1>
-                {% for comment in comments %}
-                <ul>
-                    <li class="cart-text">#Username #comment </li>
-                </ul>
+                {% for comment in image.comment.all %}
+                    <p class="cart-text"><strong>{{comment.commentator.username}}</strong>{{comment.comment}}</p>
                 {% endfor %}
-                <form  action="{%url 'new-article'%}" method="post" enctype="multipart/form-data">
+                <form  action="/comment/{{image.id}}" method="post" enctype="multipart/form-data">
                     {%csrf_token%}
 
                     {% bootstrap_form form %}
@@ -31,3 +29,10 @@
     </div>
     {% endfor %}
 </div>
+ {% for comment in post.comments.all %}
+ <b><em>{{comment.user.username}}</em></b>:{{comment.comment}}
+ {% endfor %}
+ {% for likes in post.likes.all %}
+ liked by <h1>{{likes.user.username}}</h1> and
+ {% endfor %}
+
