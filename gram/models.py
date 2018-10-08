@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
@@ -11,7 +12,7 @@ class Profile(models.Model):
     # username = models.CharField(max_length=25,unique=True)
     # relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
     bio = models.TextField(max_length=100, blank=True)
-    profilepic = models.ImageField(upload_to='articles/',blank=True)
+    profilepic = models.ImageField(upload_to='picture/',default=True)
     # email = models.EmailField()
     contact = models.CharField(max_length=15,blank=True)
 
@@ -45,14 +46,6 @@ class Profile(models.Model):
 # class Relationship(models.Model):
 #     follow = models.ForeignKey(Profile, related_name="follow")
 #     follower = models.ForeignKey(Profile, related_name="follower")
-
-
-
-
-
-
-
-
 
 class Image(models.Model):
     image = models.CharField(max_length=40)

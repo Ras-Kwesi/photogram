@@ -31,7 +31,7 @@ def index(request):
         comments = Comment.objects.all()
     except DoesNotExist:
         raise Http404()
-    return render(request,"index.html", {"images":images,'form':form,'comm':comments})
+    return render(request,"index.html", {"images":images,'comment_form':form,'comm':comments})
 
 
 
@@ -67,7 +67,7 @@ def update_profile(request):
     # current_user = User.objects.get(pk=user_id)
     current_user=request.user
     if request.method == 'POST':
-        user_form = EditUser(request.POST, instance=request.user)
+        user_form = EditUser(request.POST, request.FILES,instance=request.user)
         profile_form = EditProfile(request.POST, request.FILES,instance=current_user.profile)
 
         if user_form.is_valid() and profile_form.is_valid():
