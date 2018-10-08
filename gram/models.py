@@ -67,8 +67,10 @@ class Image(models.Model):
     caption = models.CharField(max_length=100)
     path = models.ImageField(upload_to='picture/', default=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes = models.IntegerField()
-    imagecomments = models.ForeignKey(Comment)
+    likes = models.IntegerField(default=0)
+    imagecomments = models.ForeignKey(Comment,null=True)
+
+
 
     def save_image(self):
         self.save()
