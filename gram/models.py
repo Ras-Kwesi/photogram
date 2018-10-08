@@ -12,7 +12,7 @@ class Profile(models.Model):
     # relate = models.ManyToManyField('self', symmetrical=False, through='Relationship')
     bio = models.TextField(max_length=100, blank=True)
     profilepic = models.ImageField(upload_to='articles/',blank=True)
-    email = models.EmailField()
+    # email = models.EmailField()
     contact = models.CharField(max_length=15,blank=True)
 
 

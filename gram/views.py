@@ -4,6 +4,7 @@ from .models import *
 from .forms import NewImageForm
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.db import transaction
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -50,23 +51,34 @@ def explore_results(request):
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
-    # profile = Profile.objects.get(user=current_user)
-    profile = Profile.objects.filter(user=request.user.id)
+    profile = Profile.objects.get(user=current_user)
+    print(profile)
+    # profile = Profile.objects.filter(user=request.user.id)
 
 
     return render(request,'profile.html',{'profile':profile})
 
 @login_required(login_url='/accounts/login/')
+@transaction.atomic
 def update_profile(request):
+    # current_user = User.objects.get(pk=user_id)
     current_user=request.user
     if request.method == 'POST':
-        form = EditProfile(request.POST, request.FILES)
-        if form.is_valid():
-            new_profile = form.save(commit=False)
-            new_profile.profile = current_user
-            new_profile.save()
+        user_form = EditUser(request.POST, instance=request.user)
+        profile_form = EditProfile(request.POST, request.FILES,instance=current_user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            profile_form.save()
+            user_form.save()
         return redirect('profile')
 
     else:
-        form = EditProfile()
-    return render(request, 'update_profile.html', {"form": form})
+        user_form = EditUser(instance=request.user)
+        profile_form = EditProfile(instance=current_user.profile)
+    return render(request, 'update_profile.html', {
+        "user_form": user_form,
+        "profile_form": profile_form
+    })
+
+
+# def login(request):

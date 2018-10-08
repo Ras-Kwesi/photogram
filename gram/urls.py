@@ -7,7 +7,7 @@ urlpatterns = [
     url('^$',views.index,name='index'),
     url('^explore/',views.explore_results,name='explore'),
     url('^profile/$',views.profile,name='profile'),
-    url('^update_profile/',views.update_profile,name='update_profile')
+    url('^update_profile/',views.update_profile,name='update_profile'),
 
 ]
 # if settings.DEBUG:
