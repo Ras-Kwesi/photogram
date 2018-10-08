@@ -27,7 +27,7 @@ def new_post(request):
 def index(request):
     try:
         posts = Image.objects.all()
-        form = NewComment()
+        form = NewComment(instance=request.user)
     except DoesNotExist:
         raise Http404()
     return render(request,"index.html", {"posts":posts,'form':form})
@@ -82,5 +82,14 @@ def update_profile(request):
         "profile_form": profile_form
     })
 
-
-# def login(request):
+def comment(request,id):
+    image = Image.objects.get(id=id)
+    if request.method == 'POST':
+        comm=NewComment(request.POST)
+        if comm.is_valid():
+            comment=comm.save(commit=False)
+            comment.user = request.user
+            comment.post=image
+            comment.save()
+            return redirect('index')
+    return redirect('index')
