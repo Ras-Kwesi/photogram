@@ -1,1 +1,1 @@
-web: gunicorn westalk.wsgi
+web: gunicorn photogram.wsgi
