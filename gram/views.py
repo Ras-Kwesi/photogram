@@ -27,9 +27,10 @@ def new_post(request):
 def index(request):
     try:
         posts = Image.objects.all()
+        form = NewComment()
     except DoesNotExist:
         raise Http404()
-    return render(request,"index.html", {"posts":posts})
+    return render(request,"index.html", {"posts":posts,'form':form})
 
 
 
@@ -54,8 +55,7 @@ def profile(request):
     profile = Profile.objects.get(user=current_user)
     print(profile)
     # profile = Profile.objects.filter(user=request.user.id)
-    images = Image.objects.all()
-    print
+    images = Image.objects.filter(profile = current_user)
 
 
     return render(request,'profile.html',{'profile':profile,'images':images})

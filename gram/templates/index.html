@@ -1,12 +1,12 @@
-<h1>"working"</h1>
+
 
 <div class="col-md-4 offset-md-3">
     {% for post in posts %}
 
     <div class="row">
         <div class="card">
-            <div class="card-header">#Username</div>
-            <!--<img class="card-img-top" src="#">-->
+            <div class="card-header">{{post.profile.username}}</div>
+            <img class="card-img-top" src="{{post.path.url}}">
             <div class="card-body">
                 <h1 class="cart-text"># likes</h1>
                 {% for comment in comments %}
@@ -14,6 +14,16 @@
                     <li class="cart-text">#Username #comment </li>
                 </ul>
                 {% endfor %}
+                <form  action="{%url 'new-article'%}" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+
+                    {% bootstrap_form form%}
+                    <input type="submit" class="btn btn-success btn-lg" value="Post">
+                </form>
+
+                {% block scripts %}
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                {% bootstrap_javascript %} {% endblock %}
 
             </div>
         </div>
