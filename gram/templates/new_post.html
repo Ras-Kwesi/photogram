@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+{%extends 'base.html'%}
+
 <html>
 
 <head>
@@ -14,6 +17,7 @@
 
 </head>
 
+{% block content %}
 <body>
 
   <form  action="{% url 'new_post'%}" method="post" enctype="multipart/form-data">
@@ -28,5 +32,5 @@
   {% bootstrap_javascript %} {% endblock %}
 
 </body>
-
+{% endblock %}
 </html>

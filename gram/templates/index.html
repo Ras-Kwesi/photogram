@@ -1,12 +1,15 @@
+
+ {% extends 'base.html'%}
  {% load bootstrap4 %}
+{% block content %}
 
 <div class="col-md-4 offset-md-3">
     {% for image in images %}
 
     <div class="row">
-        <div class="card">
+        <div class="card" style="width:45rem;">
             <div class="card-header">{{image.profile.username}}</div>
-            <img class="card-img-top" src="{{image.path.url}}">
+            <img class="card-img-top" id="imagePost" src="{{image.path.url}}">
             <div class="card-body">
                 <h1 class="cart-text"># likes</h1>
                 {% for comment in image.comment.all %}
@@ -29,10 +32,4 @@
     </div>
     {% endfor %}
 </div>
- {% for comment in post.comments.all %}
- <b><em>{{comment.user.username}}</em></b>:{{comment.comment}}
- {% endfor %}
- {% for likes in post.likes.all %}
- liked by <h1>{{likes.user.username}}</h1> and
- {% endfor %}
-
+ {% endblock %}
