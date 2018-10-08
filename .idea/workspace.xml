@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7261262-1f67-4cfa-bf77-edd2bef0ace6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gram/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/gram/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gram/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gram/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gram/templates/new_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/gram/templates/new_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gram/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/gram/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gram/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gram/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gram/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gram/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,14 +43,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1603" />
-          <entry key="py" value="2734" />
+          <entry key="html" value="1621" />
+          <entry key="py" value="2808" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1603" />
-          <entry key="Python" value="2734" />
+          <entry key="HTML" value="1621" />
+          <entry key="Python" value="2808" />
         </counts>
       </usages-collector>
     </session>
@@ -78,7 +77,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gram/forms.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
@@ -105,7 +104,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gram/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-525">
+                <state relative-caret-position="-300">
                   <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
                   <folding>
                     <marker date="1538982571999" expanded="true" signature="349:354" ph="..." />
@@ -119,8 +118,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gram/templates/profile.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+                <state relative-caret-position="337">
+                  <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -139,11 +138,11 @@
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gram/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -173,7 +172,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gram/models.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="427">
@@ -198,16 +197,16 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gram/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
+                <state relative-caret-position="187">
+                  <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#44#0" expanded="true" />
-                    <marker date="1538981225184" expanded="true" signature="1683:1684" ph="..." />
-                    <marker date="1538981225184" expanded="true" signature="1683:1689" ph="..." />
-                    <marker date="1538981225184" expanded="true" signature="1892:1897" ph="..." />
+                    <marker date="1538983106658" expanded="true" signature="1726:1727" ph="..." />
+                    <marker date="1538983106658" expanded="true" signature="1726:1732" ph="..." />
+                    <marker date="1538983106658" expanded="true" signature="1951:1956" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -260,13 +259,13 @@
         <option value="$PROJECT_DIR$/gram/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/gram/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/gram/templates/explore.html" />
-        <option value="$PROJECT_DIR$/gram/templates/profile.html" />
         <option value="$PROJECT_DIR$/gram/templates/update_profile.html" />
-        <option value="$PROJECT_DIR$/gram/views.py" />
-        <option value="$PROJECT_DIR$/gram/urls.py" />
         <option value="$PROJECT_DIR$/gram/templates/new_post.html" />
         <option value="$PROJECT_DIR$/gram/forms.py" />
         <option value="$PROJECT_DIR$/gram/models.py" />
+        <option value="$PROJECT_DIR$/gram/templates/profile.html" />
+        <option value="$PROJECT_DIR$/gram/views.py" />
+        <option value="$PROJECT_DIR$/gram/urls.py" />
       </list>
     </option>
   </component>
@@ -354,7 +353,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49856323" visible="true" weight="0.11913548" />
       <window_info id="Structure" order="1" sideWeight="0.50143677" side_tool="true" weight="0.096468106" />
@@ -451,13 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gram/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gram/templates/registration/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -477,15 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/photogram/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gram/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="615">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -503,45 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gram/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gram/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <marker date="1538981225184" expanded="true" signature="1683:1684" ph="..." />
-            <marker date="1538981225184" expanded="true" signature="1683:1689" ph="..." />
-            <marker date="1538981225184" expanded="true" signature="1892:1897" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gram/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gram/templates/new_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gram/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -555,14 +500,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gram/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gram/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gram/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gram/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <marker date="1538983106658" expanded="true" signature="1726:1727" ph="..." />
+            <marker date="1538983106658" expanded="true" signature="1726:1732" ph="..." />
+            <marker date="1538983106658" expanded="true" signature="1951:1956" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gram/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+        <state relative-caret-position="-300">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
           <folding>
             <marker date="1538982571999" expanded="true" signature="349:354" ph="..." />
             <marker date="1538982571999" expanded="true" signature="1605:1609" ph="..." />
             <marker date="1538982571999" expanded="true" signature="1637:1834" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gram/templates/new_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gram/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
