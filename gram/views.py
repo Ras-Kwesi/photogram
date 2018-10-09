@@ -95,3 +95,24 @@ def comment(request,id):
             comment.save()
             return redirect('index')
     return redirect('index')
+
+def signup(request):
+    """
+    signup form view function
+    """
+    # checking if request method is a post
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+
+        # form validationq
+        if form.is_valid():
+            # saving user credentials and creating uer instance  if form is valid
+            user = form.save()
+
+            # user passed as argument to auth_login function
+            auth_login(request, user)
+            return redirect('edit_profile')
+    else:
+        form = SignUpForm()
+
+    return render(request, 'registration/registration_form.html', {'form': form})
