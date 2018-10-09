@@ -80,7 +80,7 @@ python manage.py runserver
 ```
 ## Contributing
 
-- Git clone [https://github.com/EugeneZnm/IGCLONE.git](https://github.com/Ras-Kwesi/photogram.git) 
+- Git clone [https://github.com/Ras-Kwesi/photogram.git](https://github.com/Ras-Kwesi/photogram.git) 
 - Make the changes.
 - Write your tests.
 - If everything is OK. push your changes and make a pull request.
