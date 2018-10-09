@@ -35,7 +35,7 @@ class Profile(models.Model):
 
     @classmethod
     def search_by_username(cls,search_query):
-        profiles = cls.objects.filter(username__icontains=search_query)
+        profiles = cls.objects.filter(user__username__icontains=search_query)
         return profiles
 
     @classmethod

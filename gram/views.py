@@ -39,10 +39,11 @@ def explore_results(request):
 
     if 'profile' in request.GET and request.GET["profile"]:
         search_query = request.GET.get("profile")
-        searched_profiles = Profile.search_by_username(search_query)
-        message = f"{search_term}"
+        searched_profiles = Profile.objects.filter(user__username=search_query)
+        message = f"{search_query}"
+        print(searched_profiles)
 
-        return render(request, 'explore.html',{"message":message,"articles": searched_profiles})
+        return render(request, 'explore.html',{"message":message,"profile": searched_profiles})
 
     else:
         message = "You haven't searched for any term"
