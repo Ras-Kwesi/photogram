@@ -23,7 +23,7 @@ def new_post(request):
     return render(request, 'new_post.html', {"form": form})
 
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def index(request):
     try:
         images = Image.objects.all()
@@ -101,18 +101,18 @@ def signup(request):
     signup form view function
     """
     # checking if request method is a post
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
+    # if request.method == 'POST':
+    #     form = SignUpForm(request.POST)
+    #
+    #     # form validationq
+    #     if form.is_valid():
+    #         # saving user credentials and creating uer instance  if form is valid
+    #         user = form.save()
+    #
+    #         # user passed as argument to auth_login function
+    #         auth_login(request, user)
+    #         return redirect('edit_profile')
+    # else:
+    #     form = SignUpForm()
 
-        # form validationq
-        if form.is_valid():
-            # saving user credentials and creating uer instance  if form is valid
-            user = form.save()
-
-            # user passed as argument to auth_login function
-            auth_login(request, user)
-            return redirect('edit_profile')
-    else:
-        form = SignUpForm()
-
-    return render(request, 'registration/registration_form.html', {'form': form})
+    # return render(request, 'registration/registration_form.html', {'form': form})
