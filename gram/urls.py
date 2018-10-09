@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     url('^$',views.index,name='index'),
     url('^explore/',views.explore_results,name='explore'),
-    url('^profile/$',views.profile,name='profile'),
-    url('^update_profile/$',views.update_profile,name='update_profile'),
+    url('profile/$',views.profile,name='profile'),
+    url('^update/$',views.update_profile,name='update'),
     url('^new_post/',views.new_post,name='new_post'),
     url('^comment/(\d+)',views.comment,name='comment'),
 

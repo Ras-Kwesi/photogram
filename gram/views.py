@@ -63,7 +63,7 @@ def profile(request):
 
 @login_required(login_url='/accounts/login/')
 @transaction.atomic
-def update_profile(request):
+def update(request):
     # current_user = User.objects.get(pk=user_id)
     current_user=request.user
     if request.method == 'POST':
@@ -78,7 +78,7 @@ def update_profile(request):
     else:
         user_form = EditUser(instance=request.user)
         profile_form = EditProfile(instance=current_user.profile)
-    return render(request, 'update_profile.html', {
+    return render(request, 'update.html', {
         "user_form": user_form,
         "profile_form": profile_form
     })
