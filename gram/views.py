@@ -7,7 +7,7 @@ from .forms import *
 from django.db import transaction
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/register/')
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
